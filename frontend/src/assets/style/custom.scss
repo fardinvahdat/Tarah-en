@@ -1,0 +1,78 @@
+/* Prevent scaling on input focus */
+input,
+textarea,
+select,
+button {
+  font-size: 16px; /* Ensure font size is not too small */
+}
+
+/* Prevent zooming on input focus */
+@media screen and (max-width: 767px) {
+  input,
+  textarea,
+  select,
+  button {
+    font-size: 16px !important;
+  }
+}
+
+.base-button {
+  @apply h-8 w-full outline-none;
+}
+.el-input__inner {
+  text-align: center;
+}
+.el-select__wrapper,
+.el-button,
+.el-textarea__inner,
+.el-input__wrapper,
+.el-input-group__append,
+.el-input-group__prepend,
+.el-input-group--append > .el-input__wrapper,
+.el-radio-button__inner {
+    @apply rounded-xl
+}
+.el-select__wrapper {
+  padding: 8px !important;
+  min-height: 35px !important;
+}
+.el-checkbox-button__inner,
+.el-radio-button__inner {
+  border-radius: 15px !important;
+  // border-left: 1px solid $borderColor !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 40px;
+  justify-content: center;
+  font-size: 12px !important;
+}
+.el-button {
+  height: unset !important;
+  min-height: 40px;
+}
+.el-button + .el-button {
+  margin-left: 0 !important;
+}
+.el-button:hover {
+  background-color: $themeColor !important;
+  border-color: $themeColor !important;
+  color: white !important;
+}
+.el-textarea__inner,
+.el-checkbox-button__inner {
+  min-height: 40px !important;
+}
+.el-checkbox-button__inner {
+  display: flex !important;
+  align-items: center;
+  @apply flex items-center gap-2 flex-row-reverse;
+}
+.el-radio-button__inner {
+  border-left: 1px solid #dcdfe6 !important;
+}
+.el-radio-button.is-active .el-radio-button__inner {
+  border-left: 1px solid #22319e !important;
+}
+.el-drawer__body{
+  padding: 0 !important;
+}

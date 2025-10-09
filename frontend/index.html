@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Designer - Professional Design Tool</title>
+    <meta
+      name="description"
+      content="Professional design tool for making beautiful images and graphics"
+    />
+
+    <!-- PWA Icons and Manifest -->
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/pwa-192x192.png" sizes="192x192" />
+    <link rel="mask-icon" href="/favicon.ico" color="#22319e" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#22319e" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Designer" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <style>
+      .first-screen-loading {
+        width: 200px;
+        height: 200px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .first-screen-loading-spinner {
+        width: 36px;
+        height: 36px;
+        border: 3px solid #03045e;
+        border-top-color: transparent;
+        border-radius: 50%;
+        animation: spinner 0.8s linear infinite;
+      }
+      .first-screen-loading-text {
+        margin-top: 20px;
+        color: #22319e;
+      }
+      @keyframes spinner {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>
+      <strong
+        >We're sorry but Designer doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong
+      >
+    </noscript>
+    <div id="app">
+      <div class="first-screen-loading">
+        <!-- <div class="first-screen-loading-spinner"></div> -->
+        <img src="/pwa-192x192.png" alt="Designer - Professional Design Tool" style="width: 100px;" />
+        <div class="first-screen-loading-text">Designer - Professional Design Tool</div>
+      </div>
+    </div>
+    <script>
+      document.oncontextmenu = (e) => e.preventDefault();
+    </script>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

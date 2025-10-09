@@ -1,0 +1,49 @@
+
+{
+  "name": "طراح - ابزار طراحی حرفه‌ای",
+  "short_name": "طراح",
+  "description": "ابزار طراحی حرفه‌ای برای ساخت تصاویر و گرافیک‌های زیبا",
+  "theme_color": "#d14424",
+  "background_color": "#000000",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["design", "productivity", "graphics"],
+  "shortcuts": [
+    {
+      "name": "ایجاد طرح جدید",
+      "short_name": "طرح جدید", 
+      "description": "شروع یک پروژه طراحی جدید",
+      "url": "/studio",
+      "icons": [{ "src": "pwa-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "قالب‌ها",
+      "short_name": "قالب‌ها",
+      "description": "مشاهده قالب‌های آماده", 
+      "url": "/templates",
+      "icons": [{ "src": "pwa-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}

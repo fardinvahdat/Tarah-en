@@ -1,0 +1,43 @@
+import { SystemFont } from "@/types/common"
+
+export const SYS_FONTS: SystemFont[] = [
+  { label: 'arial black', value: 'arial black' },
+  { label: 'Microsoft Yahei', value: 'Microsoft Yahei' },
+  { label: 'SimSun', value: 'SimSun' },
+  { label: 'SimHei', value: 'SimHei' },
+  { label: 'KaiTi', value: 'KaiTi' },
+  { label: 'NSimSun', value: 'NSimSun' },
+  { label: 'FangSong', value: 'FangSong' },
+  { label: 'PingFang SC', value: 'PingFang SC' },
+  { label: 'STHeiti', value: 'STHeiti' },
+  { label: 'STKaiti', value: 'STKaiti' },
+  { label: 'STSong', value: 'STSong' },
+  { label: 'STFangSong', value: 'STFangSong' },
+  { label: 'STZhongSong', value: 'STZhongSong' },
+  { label: 'STHupo', value: 'STHupo' },
+  { label: 'STXinwei', value: 'STXinwei' },
+  { label: 'STLiti', value: 'STLiti' },
+  { label: 'STXingkai', value: 'STXingkai' },
+  { label: 'Hiragino Sans GB', value: 'Hiragino Sans GB' },
+  { label: 'Lantinghei SC', value: 'Lantinghei SC' },
+  { label: 'Hanzipen SC', value: 'Hanzipen SC' },
+  { label: 'Hannotate SC', value: 'Hannotate SC' },
+  { label: 'Songti SC', value: 'Songti SC' },
+  { label: 'Wawati SC', value: 'Wawati SC' },
+  { label: 'Xingkai SC', value: 'Xingkai SC' },
+  { label: 'Yuanti SC', value: 'Yuanti SC' },
+  { label: 'STXihei', value: 'STXihei' },
+  { label: 'YouYuan', value: 'YouYuan' },
+  { label: 'LiSu', value: 'LiSu' },
+]
+
+export const WEB_FONTS = [
+  { label: "IRANSans", value: "IRANSans" },
+  { label: "BYekan", value: "BYekan" },
+  { label: "Alef", value: "Alef" },
+  { label: "Diba", value: "Diba" },
+  { label: "Fedra", value: "Fedra" },
+  { label: "Lalezar", value: "Lalezar" },
+  { label: "Modam", value: "Modam-Regular" },
+  { label: "Peyda", value: "Peyda-Regular" },
+];

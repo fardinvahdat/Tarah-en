@@ -1,0 +1,26 @@
+@forward "element-plus/theme-chalk/src/common/var.scss" with (
+  $colors: (
+    "primary": (
+      "base": #22319e,
+    ),
+  )
+);
+
+$themeColor: #22319e;
+$textColor: #233d4d;
+$borderColor: #eee;
+$lightGray: #f9f9f9;
+$hoverColor: #f9f9f9;
+
+$boxShadow: 3px 3px 3px rgba(#000, 0.15);
+
+$transitionDelay: 0.2s;
+$transitionDelayFast: 0.1s;
+$transitionDelaySlow: 0.3s;
+
+$borderRadius: 8px;
+
+$headerHeight: 40px;
+:root {
+  --el-color-primary: #22319e !important;
+}

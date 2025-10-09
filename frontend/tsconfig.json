@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
+    // "suppressImplicitAnyIndexErrors": true, //
+    "sourceMap": true,
+    "baseUrl": ".",
+    "types": [
+      "vite/client",
+      "vite-plugin-pwa/client"
+    ],
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/pnpm dtypes/*.d.ts",
+    "tests/**/*.ts",
+    "tests/**/*.tsx", "src/store/ui/studio.ts", "src/store/ui/index.ts", "src/store/index.ts",
+  ],
+  "files": [
+    "node_modules/vite-plugin-pwa/client.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}

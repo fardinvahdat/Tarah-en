@@ -1,0 +1,104 @@
+
+@import url('./iconfont/iconfont.css');
+@import url(./custom.scss);
+// @import url(./toolbar.scss);
+
+html,
+body {
+  width: 100% !important;
+  height: 100%;
+  overflow: hidden;
+  background-color: #f6f6f6;
+  color: $textColor;
+  margin: 0;
+  font-family: 'IRANSans';
+  // direction: rtl;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #c1c1c1;
+}
+
+pre {
+  margin-top: 0;
+  margin-bottom: 1em;
+  overflow: auto
+}
+
+.transparent-background {
+  background-color: #f0f0f0;
+  background-position: 0 0, 8px 8px;
+  background-size: 16px 16px;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* Animation classes */
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease forwards;
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+  from { 
+    opacity: 0; 
+    transform: translateX(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.scale-in {
+  animation: scaleIn 0.5s ease forwards;
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0; 
+    transform: scale(0.95);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Utility classes */
+.shadow-hover {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  
+  &:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+  }
+}

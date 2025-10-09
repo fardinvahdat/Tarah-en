@@ -1,0 +1,266 @@
+
+/* Element Plus Overrides */
+.el-slider__button {
+  border-color: var(--el-color-primary);
+}
+
+.el-slider__bar {
+  background-color: var(--el-color-primary);
+}
+
+.el-tabs__active-bar {
+  background-color: var(--el-color-primary);
+}
+
+.el-tabs__item.is-active {
+  color: var(--el-color-primary);
+}
+
+/* Image editor specific styles */
+.image-editor-panel {
+  .el-divider {
+    margin: 12px 0;
+  }
+  
+  .el-slider {
+    margin: 8px 0;
+  }
+}
+
+/* Filter preset cards */
+.filter-preset-card {
+  transition: all 0.25s ease;
+  border: 2px solid transparent;
+  overflow: hidden;
+  border-radius: 8px;
+  
+  &.is-active {
+    border-color: var(--el-color-primary);
+  }
+  
+  &:hover:not(.is-active) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Image filter tab */
+.image-filter-tab {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  
+  &.is-active {
+    color: var(--el-color-primary);
+    font-weight: 500;
+  }
+}
+
+/* Progress bars and loaders */
+.el-progress-dashboard {
+  .el-progress-dashboard__inner {
+    stroke: var(--el-color-primary);
+  }
+}
+
+/* Popover styling */
+.el-popover.el-popper {
+  padding: 0;
+  border-radius: 8px;
+  
+  &.clip-popover-container, &.opacity-popover-container {
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+}
+
+/* Input styling consistency */
+.el-input__wrapper,
+.el-select__wrapper,
+.el-textarea__wrapper {
+  border-radius: 8px !important;
+  transition: all 0.2s ease;
+  
+  &:hover {
+    box-shadow: 0 0 0 1px var(--el-color-primary) inset !important;
+  }
+  
+  &.is-focus {
+    box-shadow: 0 0 0 1px var(--el-color-primary) inset !important;
+  }
+}
+
+/* Button styling consistency */
+.el-button {
+  border-radius: 8px !important;
+  transition: all 0.25s ease;
+  
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideRight {
+  from { transform: translateX(-20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.fade-in-animation {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.scale-in-animation {
+  animation: scaleIn 0.3s ease-out forwards;
+}
+
+.slide-in-animation {
+  animation: slideRight 0.3s ease-out forwards;
+}
+
+/* Improved card hover effects */
+.hover-card {
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Toolbar styles - Canva inspired */
+.toolbar-menu {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 4px;
+  transition: all 0.2s ease;
+  
+  .toolbar-item {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    position: relative;
+    
+    &:hover {
+      background-color: #f5f5f7;
+    }
+    
+    &.active {
+      background-color: var(--el-color-primary);
+      color: white;
+    }
+    
+    &.has-dropdown {
+      &::after {
+        content: '';
+        position: absolute;
+        right: 4px;
+        bottom: 4px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background-color: currentColor;
+        opacity: 0.6;
+      }
+    }
+  }
+
+  .divider {
+    width: 1px;
+    height: 24px;
+    margin: 0 4px;
+    background-color: #eaeaea;
+  }
+  
+  .toolbar-dropdown {
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+  }
+}
+
+/* Text Toolbar Styles */
+.text-toolbar {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 4px;
+  
+  .tool-group {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    padding: 2px;
+    
+    .tool-item {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      
+      &:hover {
+        background-color: #eceef0;
+      }
+      
+      &.active {
+        background-color: #fff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+  
+  .font-select, .size-select {
+    min-width: 100px;
+    height: 36px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    
+    &:hover {
+      border-color: var(--el-color-primary);
+    }
+  }
+  
+  .color-button {
+    position: relative;
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    overflow: hidden;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 6px;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+    }
+    
+    .color-indicator {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+</style>
