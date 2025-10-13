@@ -10,19 +10,30 @@
           <div class="color-picker-item">
             <el-popover trigger="click" placement="bottom" :width="265">
               <template #reference>
-                <div class="color-button custom-color md:h-[36px] !h-full"
-                  :style="{ backgroundColor: background.fill || '#fff' }">
+                <div
+                  class="color-button custom-color md:h-[36px] !h-full"
+                  :style="{ backgroundColor: background.fill || '#fff' }"
+                >
                   <Icon name="pallete" class="color-icon" />
                 </div>
               </template>
-              <ColorPicker :modelValue="background.color || '#fff'"
-                @update:modelValue="(color) => updateBackground({ color, fill: color }, true)" />
+              <ColorPicker
+                :modelValue="background.color || '#fff'"
+                @update:modelValue="
+                  (color) => updateBackground({ color, fill: color }, true)
+                "
+              />
             </el-popover>
           </div>
-          <div v-for="(item, index) in ColorLibs" :key="index" class="color-swatch "
+          <div
+            v-for="(item, index) in ColorLibs"
+            :key="index"
+            class="color-swatch"
             :style="{ backgroundColor: item.value }"
-            @click="updateBackground({ color: item.value, fill: item.value }, true)">
-          </div>
+            @click="
+              updateBackground({ color: item.value, fill: item.value }, true)
+            "
+          ></div>
         </div>
       </div>
     </transition>
@@ -34,44 +45,74 @@
       <div class="section-content">
         <div class="flex items-center justify-between mb-4">
           <p class="text-gray-600 text-sm">Color spectrum</p>
-          <el-switch v-model="gradientType" @change="changeGradientType" active-value="linear" inactive-value="radial"
-            active-text="Linear" inactive-text="Radial" class="flex-row-reverse" />
+          <el-switch
+            v-model="gradientType"
+            @change="changeGradientType"
+            active-value="linear"
+            inactive-value="radial"
+            active-text="Linear"
+            inactive-text="Radial"
+            class="flex-row-reverse"
+          />
         </div>
 
         <div class="gradient-grid !grid-cols-6 !gap-[6px] !pl-0">
-          <div v-for="(item, nameIndex) in GradientColorLibs" :key="nameIndex" class="gradient-item !outline-none"
-            :class="{ 'selected': background.gradientName === item.name }" @click="changeGradientName(item.name)">
-            <GradientFill :name="item.name" :type="background.gradientType || 'linear'" :colors="item.colors" />
+          <div
+            v-for="(item, nameIndex) in GradientColorLibs"
+            :key="nameIndex"
+            class="gradient-item !outline-none"
+            :class="{ selected: background.gradientName === item.name }"
+            @click="changeGradientName(item.name)"
+          >
+            <GradientFill
+              :name="item.name"
+              :type="background.gradientType || 'linear'"
+              :colors="item.colors"
+            />
           </div>
         </div>
 
         <div v-if="background.fillType == 2" id="gradiant_customize_menu">
           <div class="controls-section mt-5">
-
-
             <div class="element-slider">
               <div class="section">
                 <div class="flex justify-between">
                   <div class="section-header">Transparency</div>
-                  <div class="slider-value">{{ gradientOpacity.toFixed(2) }}</div>
+                  <div class="slider-value">
+                    {{ gradientOpacity.toFixed(2) }}
+                  </div>
                 </div>
                 <div class="slider-row">
-                  <el-slider class="slider" v-model="gradientOpacity" :min="0" :max="1" :step="0.01"
-                    @change="generateGradientBackground" />
+                  <el-slider
+                    class="slider"
+                    v-model="gradientOpacity"
+                    :min="0"
+                    :max="1"
+                    :step="0.01"
+                    @change="generateGradientBackground"
+                  />
                 </div>
               </div>
             </div>
 
-
-            <div class="element-slider" v-if="background.gradientType === 'linear'">
+            <div
+              class="element-slider"
+              v-if="background.gradientType === 'linear'"
+            >
               <div class="section">
                 <div class="flex justify-between">
-                  <div class="section-header">زاویه</div>
+                  <div class="section-header">Angle</div>
                   <div class="slider-value">{{ gradientRotate }}°</div>
                 </div>
                 <div class="slider-row">
-                  <el-slider class="slider" v-model="gradientRotate" :min="0" :max="360" :step="1"
-                    @change="generateGradientBackground" />
+                  <el-slider
+                    class="slider"
+                    v-model="gradientRotate"
+                    :min="0"
+                    :max="360"
+                    :step="1"
+                    @change="generateGradientBackground"
+                  />
                 </div>
               </div>
             </div>
@@ -79,13 +120,29 @@
             <div class="element-slider">
               <div class="section">
                 <div class="flex justify-between">
-                  <div class="section-header">{{ background.gradientType === 'linear' ? 'Horizontal distance' : 'Vertical distance'
-                    }}</div>
+                  <div class="section-header">
+                    {{
+                      background.gradientType === "linear"
+                        ? "Horizontal distance"
+                        : "Vertical distance"
+                    }}
+                  </div>
                   <div class="slider-value">{{ gradientOffsetX }}</div>
                 </div>
                 <div class="slider-row">
-                  <el-slider class="slider" v-model="gradientOffsetX" :min="0" :max="1" :step="0.01"
-                    @change="(val) => { gradientOffsetX = val; generateGradientBackground(); }" />
+                  <el-slider
+                    class="slider"
+                    v-model="gradientOffsetX"
+                    :min="0"
+                    :max="1"
+                    :step="0.01"
+                    @change="
+                      (val) => {
+                        gradientOffsetX = val;
+                        generateGradientBackground();
+                      }
+                    "
+                  />
                 </div>
               </div>
             </div>
@@ -94,30 +151,52 @@
               <div class="section">
                 <div class="flex justify-between">
                   <div class="section-header">Vertical distance</div>
-                  <div class="slider-value">{{ gradientOffsetY.toFixed(2) }}</div>
+                  <div class="slider-value">
+                    {{ gradientOffsetY.toFixed(2) }}
+                  </div>
                 </div>
                 <div class="slider-row">
-                  <el-slider class="slider" v-model="gradientOffsetY" :min="0" :max="1" :step="0.01"
-                    @change="(val) => { gradientOffsetY = val; generateGradientBackground(); }" />
+                  <el-slider
+                    class="slider"
+                    v-model="gradientOffsetY"
+                    :min="0"
+                    :max="1"
+                    :step="0.01"
+                    @change="
+                      (val) => {
+                        gradientOffsetY = val;
+                        generateGradientBackground();
+                      }
+                    "
+                  />
                 </div>
               </div>
             </div>
-
-
           </div>
 
           <div class="gradient-colors mt-5">
             <p class="text-gray-600 text-sm mb-3">Spectrum colors</p>
             <div class="gradient-colors-row">
-              <div v-for="(item, index) in background.gradientColor" :key="index" class="gradient-color-box">
+              <div
+                v-for="(item, index) in background.gradientColor"
+                :key="index"
+                class="gradient-color-box"
+              >
                 <el-popover trigger="click" width="265">
                   <template #reference>
-                    <div class="color-button" :style="{ backgroundColor: item.color }">
+                    <div
+                      class="color-button"
+                      :style="{ backgroundColor: item.color }"
+                    >
                       <Icon name="pallete" class="color-icon" />
                     </div>
                   </template>
-                  <ColorPicker :modelValue="item.color"
-                    @update:modelValue="(color) => updateGradientBackground(index, color)" />
+                  <ColorPicker
+                    :modelValue="item.color"
+                    @update:modelValue="
+                      (color) => updateGradientBackground(index, color)
+                    "
+                  />
                 </el-popover>
               </div>
             </div>
@@ -133,15 +212,30 @@
       <div class="section-content">
         <div class="flex items-center justify-between mb-4">
           <p class="text-gray-600 text-sm">Upload image</p>
-          <el-select v-model="background.imageSize" @change="changeImageSize" class="!w-1/2">
-            <el-option v-for="item in BackgroundFillImageMode" :key="item.id" :label="item.name" :value="item.id" />
+          <el-select
+            v-model="background.imageSize"
+            @change="changeImageSize"
+            class="!w-1/2"
+          >
+            <el-option
+              v-for="item in BackgroundFillImageMode"
+              :key="item.id"
+              :label="item.name"
+              :value="item.id"
+            />
           </el-select>
         </div>
 
         <FileInput @change="(files) => uploadBackgroundImage(files)">
           <div class="upload-area">
-            <div class="upload-content"
-              :style="{ backgroundImage: background.imageURL ? `url(${background.imageURL})` : 'none' }">
+            <div
+              class="upload-content"
+              :style="{
+                backgroundImage: background.imageURL
+                  ? `url(${background.imageURL})`
+                  : 'none',
+              }"
+            >
               <div v-if="!background.imageURL" class="upload-placeholder">
                 <BackgroundTypeIcons name="upload" />
                 <span class="mt-2">Click to upload</span>
@@ -159,7 +253,11 @@ import { ref, computed, watch, onMounted } from "vue";
 import { useMainStore, useTemplatesStore } from "@/store";
 import { storeToRefs } from "pinia";
 import { Gradient, Pattern, util } from "fabric";
-import { TransparentFill, BackgroundFillMode, BackgroundFillImageMode } from "@/configs/background";
+import {
+  TransparentFill,
+  BackgroundFillMode,
+  BackgroundFillImageMode,
+} from "@/configs/background";
 import { ColorLibs } from "@/configs/colors";
 import { GradientColorLibs } from "@/configs/colorGradient";
 import { GradientCoords } from "@/types/elements";
@@ -177,7 +275,7 @@ const { setBackgroudImage } = useHandleBackground();
 const { currentTemplate } = storeToRefs(templatesStore);
 
 // Gradient settings
-const gradientType = ref('linear');
+const gradientType = ref("linear");
 const gradientOpacity = ref(1);
 const gradientRotate = ref(0);
 const gradientOffsetX = ref(0);
@@ -194,14 +292,25 @@ onMounted(() => {
 
   // Initialize gradient opacity and other values
   gradientOpacity.value = currentTemplate.value?.workSpace?.opacity ?? 1;
-  gradientRotate.value = currentTemplate.value?.workSpace?.fill?.gradientRotate ?? 0;
+  gradientRotate.value =
+    currentTemplate.value?.workSpace?.fill?.gradientRotate ?? 0;
 
-  if (currentTemplate.value?.workSpace?.fill?.offsetX && currentTemplate.value?.workSpace?.width) {
-    gradientOffsetX.value = currentTemplate.value.workSpace.fill.offsetX / currentTemplate.value.workSpace.width;
+  if (
+    currentTemplate.value?.workSpace?.fill?.offsetX &&
+    currentTemplate.value?.workSpace?.width
+  ) {
+    gradientOffsetX.value =
+      currentTemplate.value.workSpace.fill.offsetX /
+      currentTemplate.value.workSpace.width;
   }
 
-  if (currentTemplate.value?.workSpace?.fill?.offsetY && currentTemplate.value?.workSpace?.height) {
-    gradientOffsetY.value = currentTemplate.value.workSpace.fill.offsetY / currentTemplate.value.workSpace.height;
+  if (
+    currentTemplate.value?.workSpace?.fill?.offsetY &&
+    currentTemplate.value?.workSpace?.height
+  ) {
+    gradientOffsetY.value =
+      currentTemplate.value.workSpace.fill.offsetY /
+      currentTemplate.value.workSpace.height;
   }
 });
 
@@ -264,7 +373,8 @@ const changeBackgroundType = (type: number) => {
       ...background.value,
       fillType: 2,
       gradientType: background.value.gradientType || "linear",
-      gradientColor: background.value.gradientColor || GradientColorLibs[0].colors,
+      gradientColor:
+        background.value.gradientColor || GradientColorLibs[0].colors,
       gradientName: background.value.gradientName || GradientColorLibs[0].name,
     };
     updateBackground(templateBackground);
@@ -273,18 +383,25 @@ const changeBackgroundType = (type: number) => {
 };
 
 // Setting the Background
-const updateBackground = async (props: Partial<WorkSpaceElement>, isSolid: boolean = false) => {
+const updateBackground = async (
+  props: Partial<WorkSpaceElement>,
+  isSolid: boolean = false
+) => {
   const [canvas] = useCanvas();
-  const workSpaceDraw = canvas?.getObjects().filter((item) => item.id === WorkSpaceDrawType)[0];
+  const workSpaceDraw = canvas
+    ?.getObjects()
+    .filter((item) => item.id === WorkSpaceDrawType)[0];
   if (!workSpaceDraw) return;
   workSpaceDraw.set({ ...props });
   if (props.fill instanceof Pattern) {
-    props.fill = props.fill.toObject() as Pattern
+    props.fill = props.fill.toObject() as Pattern;
   }
   if (isSolid) {
     changeBackgroundType(0);
   }
-  templatesStore.updateWorkSpace({ workSpace: { ...background.value, ...props } });
+  templatesStore.updateWorkSpace({
+    workSpace: { ...background.value, ...props },
+  });
   canvas.renderAll();
 };
 
@@ -338,7 +455,6 @@ const changeGradientName = async (gradientName: string) => {
   }
 };
 
-
 // Modify the gradient type
 const changeGradientType = (value: string) => {
   background.value.gradientType = value;
@@ -359,7 +475,9 @@ const updateGradientBackground = (index: number, color: string) => {
 // Generate a gradient background
 const generateGradientBackground = () => {
   const [canvas] = useCanvas();
-  const workSpaceDraw = canvas?.getObjects().filter((item) => item.id === WorkSpaceDrawType)[0];
+  const workSpaceDraw = canvas
+    ?.getObjects()
+    .filter((item) => item.id === WorkSpaceDrawType)[0];
   if (!workSpaceDraw) return;
   const width = workSpaceDraw.width;
   const height = workSpaceDraw.height;
