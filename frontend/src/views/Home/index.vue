@@ -17,4 +17,5 @@ const router = useRouter();
 if (route.name == 'Root') {
   router.push('/home')
 }
+//test
 </script>
