@@ -7,7 +7,7 @@
                     <Icon :name="item.icon" class="icon" />
                 </div>
                 <div class="design-info">
-                    <p class="design-title">{{ item.title }}</p>
+                    <p class="design-title text-center">{{ item.title }}</p>
                     <p class="design-dimensions">{{ item.height }} * {{ item.width }}</p>
                 </div>
             </a>

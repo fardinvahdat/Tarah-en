@@ -5,7 +5,7 @@
         <Header />
         <Hero class="scale-in">
             <div class="text-white text-lg md:text-4xl flex flex-col items-center gap-3 hero-container">
-                <div class="tracking-wide hero-title">What are you planning to design today?</div>
+                <div class="tracking-wide hero-title text-center">What are you planning to design today?</div>
                 <div class="text-base font-light opacity-90 hero-subtitle">Professional design tool for all</div>
                 <div class="hero-particles"></div>
             </div>
