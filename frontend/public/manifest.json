@@ -1,8 +1,7 @@
-
 {
-  "name": "طراح - ابزار طراحی حرفه‌ای",
-  "short_name": "طراح",
-  "description": "ابزار طراحی حرفه‌ای برای ساخت تصاویر و گرافیک‌های زیبا",
+  "name": "Tarah - ابزار Tarahی حرفه‌ای",
+  "short_name": "Tarah",
+  "description": "ابزار Tarahی حرفه‌ای برای ساخت تصاویر و گرافیک‌های زیبا",
   "theme_color": "#d14424",
   "background_color": "#000000",
   "display": "standalone",
@@ -33,15 +32,15 @@
   "shortcuts": [
     {
       "name": "ایجاد طرح جدید",
-      "short_name": "طرح جدید", 
-      "description": "شروع یک پروژه طراحی جدید",
+      "short_name": "طرح جدید",
+      "description": "شروع یک پروژه Tarahی جدید",
       "url": "/studio",
       "icons": [{ "src": "pwa-192x192.png", "sizes": "192x192" }]
     },
     {
       "name": "قالب‌ها",
       "short_name": "قالب‌ها",
-      "description": "مشاهده قالب‌های آماده", 
+      "description": "مشاهده قالب‌های آماده",
       "url": "/templates",
       "icons": [{ "src": "pwa-192x192.png", "sizes": "192x192" }]
     }

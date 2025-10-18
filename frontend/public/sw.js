@@ -1,4 +1,3 @@
-
 const CACHE_NAME = "tarrah-pwa-v1.2.0";
 const STATIC_CACHE = "tarrah-static-v1.2.0";
 const DYNAMIC_CACHE = "tarrah-dynamic-v1.2.0";
@@ -221,7 +220,7 @@ self.addEventListener("push", (event) => {
   console.log("Push notification received:", event);
 
   const options = {
-    body: event.data ? event.data.text() : "اعلان جدید از طراح",
+    body: event.data ? event.data.text() : "اعلان جدید از Tarah",
     icon: "/pwa-192x192.png",
     badge: "/pwa-192x192.png",
     vibrate: [100, 50, 100],
@@ -243,7 +242,7 @@ self.addEventListener("push", (event) => {
     ],
   };
 
-  event.waitUntil(self.registration.showNotification("طراح", options));
+  event.waitUntil(self.registration.showNotification("Tarah", options));
 });
 
 // Notification click handling
