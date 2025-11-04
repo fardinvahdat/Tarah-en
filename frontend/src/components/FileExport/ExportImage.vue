@@ -47,7 +47,7 @@
     <!-- Action Buttons -->
     <div class="action-buttons" :class="user?.role == 'user' ? 'single-action' : 'dual-action'">
       <el-button class="action-button download" type="primary" @click="downloaImage"
-        v-loading.fullscreen.lock="Exporting">Receive</el-button>
+        v-loading.fullscreen.lock="Exporting">Download</el-button>
     </div>
   </div>
 </template>

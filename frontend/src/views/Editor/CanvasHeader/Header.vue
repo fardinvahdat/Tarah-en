@@ -6,7 +6,7 @@
       <Button
         class="bg-primary-b3 px-4 py-1 h-fit md:!text-sm !text-xs text-primary-default"
         @click="isExportDialogVisible = true"
-        >Receive</Button
+        >Download</Button
       >
       <div class="flex items-center flex-row-reverse md:gap-1">
         <el-tooltip placement="top" :hide-after="0">

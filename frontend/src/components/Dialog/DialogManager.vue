@@ -14,7 +14,7 @@
     </el-drawer>
 
     <!-- Export Dialog/Drawer -->
-    <el-dialog v-if="windowWidth > 768" v-model="exportDialogVisible" title="Receive" 
+    <el-dialog v-if="windowWidth > 768" v-model="exportDialogVisible" title="Download" 
       class="md:max-w-[480px] max-w-[350px] upload-dialog w-full" @close="exportDialogVisible = false">
       <FileExport @close="exportDialogVisible = false" />
     </el-dialog>
