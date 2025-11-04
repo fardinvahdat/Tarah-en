@@ -465,7 +465,7 @@ export class FabricRuler extends Disposable {
       const localizedText = toPersianNumerals(textValue);
 
       this.darwText(ctx, {
-        text: localizedText,
+        text: textValue,
         left,
         top,
         fill: textColor,
@@ -542,11 +542,12 @@ export class FabricRuler extends Disposable {
       fontSize?: number;
     }
   ) {
+    console.log(text)
     ctx.save();
     fill && (ctx.fillStyle = fill);
     ctx.textAlign = "left";
     ctx.textBaseline = baseline ?? "top";
-    ctx.font = `${fontSize ?? 12}px IranSans, sans-serif`;
+    ctx.font = `${fontSize ?? 12}px sans-serif`;
     if (angle) {
       ctx.translate(left, top);
       ctx.rotate(PiBy180 * angle);
